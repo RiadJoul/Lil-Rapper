@@ -1,15 +1,5 @@
 <template>
   <div>
-    <!--
-      <div class="lines" v-if="transcription_">
-        <p>{{ getLines() }} </p>
-      </div>
-      <div class="rhymes">
-        <ul class="list" v-for="rhyme in this.rhymes" :key="rhyme[0]">
-          <li class="item">{{ rhyme.word }}</li>
-        </ul>
-      </div>
-      -->
     <!-- header -->
     <header>
       <!-- navbar -->
@@ -22,7 +12,7 @@
                 data-target="#bs-example-navbar-collapse-1">
                 <i class="fa fa-bars"></i>
               </button>
-            <h3 @click="$router.push('/')" class="logo">lil rapper</h3>
+              <h3 @click="$router.push('/')" class="logo">lil rapper</h3>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -48,7 +38,7 @@
       <!-- End navbar -->
     </header>
     <!-- End header -->
-    
+
     <!-- Screenshot -->
     <section class="sec-pad-lg grdnt-yellow light">
       <div class="container">
@@ -67,28 +57,32 @@
 
     <br>
     <!-- Feature -->
-	<section id="feature" class="bg-memphis sec-pad-lg pt-0">
-		<div class="container">
-			<div class="row">
-				<div class="items row">
-					<div class="text-center col-feat shad-item">
-            <span v-if="this.rhymes.length > 0">
-						<div v-for="rhyme in this.rhymes" :key="rhyme[0]" class="col-md-3 col-sm-6 res-margin wow animated fadeInUp" data-wow-duration="1.2s" data-wow-delay=".2s">
-              <span v-if="rhyme.score >= 300">
-							<div class="item">
-								<div class="spce"></div>
-								<h5>{{ rhyme.word.toString()}}</h5>
-							</div>
+    <section id="feature" class="bg-memphis sec-pad-lg pt-0">
+      <div class="container">
+        <div class="row">
+          <div class="items row">
+            <div class="text-center col-feat shad-item">
+              <span v-if="this.rhymes.length > 0">
+                <div v-for="rhyme in this.rhymes" :key="rhyme[0]"
+                  class="col-md-3 col-sm-6 res-margin wow animated fadeInUp" data-wow-duration="1.2s"
+                  data-wow-delay=".2s">
+                  <span v-if="rhyme.score >= 300">
+                    <div class="item">
+                      <div class="spce"></div>
+                      <h5>{{ rhyme.word.toString()}}</h5>
+                    </div>
+                  </span>
+                </div>
               </span>
-						</div>
-            </span>
-            <div v-else><h2>rhymes will appear here!</h2></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End feature -->
+              <div v-else>
+                <h2>rhymes will appear here!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End feature -->
 
   </div>
 </template>
@@ -107,7 +101,7 @@
         rhymes: [],
         valid: false,
         ButtonText: 'start',
-        word : []
+        word: []
       };
     },
     methods: {
